@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Youtube Police",
+  "version": "1.0",
+  "description": "Detects the incorrect 'Youtube' and alerts users.",
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": "icon48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
